@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { NgClass } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -12,9 +13,10 @@ import { RouterModule } from '@angular/router';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+constructor(private title: Title) {}
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+  this.title.setTitle('404 - Page Not Found');
+}
 
 }
